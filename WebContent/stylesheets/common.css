@@ -1,0 +1,113 @@
+.search-input{
+    position: relative;
+    height: 40px;
+    border: 1px solid #d5dce0;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+.search-input:hover,
+.search-input:focus{
+    border-color: #2b8de6;
+    outline: 0;
+}
+.search-btn, .dialog-btn, .selectfile-btn, .upload-btn{
+    width: 40px;
+    height: 40px;
+    background: #2b8de6;
+    border: none;
+    display: inline-block;
+}
+.search-btn:hover, .dialog-btn:hover, .selectfile-btn:hover, .upload-btn:hover{
+    background: #37b9ff;
+}
+.search-btn:focus, .dialog-btn:focus, .selectfile-btn:focus, .upload-btn:focus{
+    outline: 0;
+}
+.search-btn i, .dialog-btn i, .selectfile-btn i, .upload-btn i{
+    color:white;
+}
+.search-btn{
+    border-radius: 0 5px 5px 0;
+}
+.selectfile-btn{
+    border-radius: 5px 0 0 5px;
+}
+.dialog-btn, .download-btn, .upload-btn{
+    border-radius: 5px;
+}
+.upload-btn{
+    margin-left: 272px;
+}
+
+.dialog-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+}
+.upload-block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -150px;
+    width: 600px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+}
+.upload-from {
+    margin: 5px;
+}
+
+.selectfile-btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.selectfile-btn input{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: 'alpha(opacity=0)';
+    font-size: 200px;
+}
+
+.filepath-show {
+    position: relative;
+    width: 550px;
+    height: 40px;
+    border: 1px solid #2b8de6;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.upload-input{
+    position: relative;
+    width: 590px;
+    height: 40px;
+    border: 1px solid #d5dce0;
+    border-radius: 5px;
+    margin: 5px auto 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+.upload-input:hover,
+.upload-input:focus{
+    border-color: #2b8de6;
+    outline: 0;
+}

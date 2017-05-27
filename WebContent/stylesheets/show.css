@@ -1,0 +1,92 @@
+.show-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.show-head-block{
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.logo-img{
+    width: 80px;
+    margin-bottom: -30px;
+    display: inline-block;
+}
+.search-block{
+    width: 80%;
+    margin-left: 20px;
+    display: inline-block;
+}
+.search-input{
+    width: 720px;
+}
+
+.emoji-container{
+    width: 100%;
+    font-size: 0;
+}
+.emoji-block{
+    width: 24%;
+    display: inline-block;
+    margin: 5px 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.emoji-block:hover{
+    border-color: #2b8de6;
+}
+.emoji-block-content{
+    width: 240px;
+    height: 240px;
+    margin: 5px auto;
+    text-align: center;
+}
+.emoji-block-content span{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.emoji-block-content img{
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.emoji-block-footer{
+    width: 95%;
+    margin: 5px auto;
+}
+.download-form{
+    width: 20%;
+    display: inline-block;
+}
+.download-btn{
+    font-size: 16px;
+    width: 44px;
+    line-height: 30px;
+    font-weight: lighter;
+    color: #2b8de6;
+    border: 1px solid #2b8de6;
+    background: white;
+}
+.download-btn:hover{
+    background: #2b8de6;
+    color: white;
+}
+.emoji-size{
+    width: 40%;
+    color: #9c9c9c;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+}
+.emoji-time{
+    width: 40%;
+    color: #9c9c9c;
+    text-align: right;
+    font-size: 16px;
+    display: inline-block;
+}
+.hint{
+    font-size: 20px;
+}

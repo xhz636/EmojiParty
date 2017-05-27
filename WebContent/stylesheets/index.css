@@ -1,0 +1,35 @@
+body{
+    background: url("../images/background.jpg") no-repeat;
+    background-size: cover;
+}
+
+.index-container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.logo-block{
+    text-align: center;
+    margin: 30% auto 60px;
+}
+.logo-block img{
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: -30px;
+}
+.logo-title{
+    font-size: 64px;
+    line-height: 100px;
+    font-family: "Microsoft YaHei UI", sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.search-block{
+    text-align: center;
+    margin: 0 auto;
+    display: inline;
+}
+.search-input{
+    width: 80%;
+}
