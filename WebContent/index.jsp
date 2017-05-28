@@ -27,10 +27,10 @@
 
 <div id="id-dialog" style="display: none" class="dialog-container">
     <div id="id-upload" class="upload-block">
-        <form action="/EmojiParty/servlet/UploadController" method="post" enctype="multipart/form-data" class="upload-from">
-            <button title="选择文件" class="selectfile-btn">
+        <form action="/EmojiParty/servlet/UploadController" method="post" enctype="multipart/form-data" class="upload-form">
+            <button type="button" onclick="document.getElementById('id-upload-file').click()" title="选择文件" class="selectfile-btn">
                 <i class="iconfont icon-xuanzewenjian"></i>
-                <input id="id-upload-file" type="file" name="uploadfile" accept="image/gif, image/jpeg, image/png, image/bmp"/>
+                <input id="id-upload-file" type="file" name="uploadfile" accept="image/gif, image/jpeg, image/png, image/bmp" style="display: none"/>
             </button><!--
             --><input id="id-filepath" type="text" placeholder="只能上传图片,大小不超过1MB" readonly="readonly" class="filepath-show"/>
             <input name="keywords" placeholder="请输入表情包关键字(以,分割 超过32字节的关键字无效)" class="upload-input">
