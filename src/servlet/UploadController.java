@@ -22,6 +22,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -37,6 +38,7 @@ public class UploadController extends HttpServlet {
     private final String[] FILE_FORMAT = {"gif", "jpg", "png", "bmp"};
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         if (!ServletFileUpload.isMultipartContent(request)) {
             response.sendError(500);
             return;
@@ -114,11 +116,7 @@ public class UploadController extends HttpServlet {
                     else {
                         String field = item.getFieldName();
                         if (field.equals("keywords")) {
-                            keywords = item.getString();
-                            if (Pattern.matches("(\\s|,)*", keywords)) {
-                                request.setAttribute("message", "keyword");
-                                exit = true;
-                            }
+                            keywords = new String(item.getString().getBytes("ISO-8859-1"),"UTF-8") ;
                         }
                     }
                     if (exit)
@@ -127,16 +125,18 @@ public class UploadController extends HttpServlet {
                 if (!exit) {
                     mysql = new MySQLBean();
                     String[] list = keywords.split(",");
-                    int count = 0;
+                    List<String> keys = new ArrayList<>();
                     for (int i = 0; i < list.length; i++) {
                         if (list[i].trim().length() > 0 && list[i].trim().length() <= 32) {
-                            Keyword keyword = new Keyword(list[i].trim(), image.getID(), 0);
-                            if(mysql.addKeyWord(keyword))
-                                count++;
+                            keys.add(list[i].trim());
                         }
                     }
-                    if (count > 0) {
+                    if (keys.size() > 0) {
                         mysql.addImage(image);
+                        for (int i = 0; i < keys.size(); i++) {
+                            Keyword keyword = new Keyword(keys.get(i), image.getID(), 0);
+                            mysql.addKeyWord(keyword);
+                        }
                         request.setAttribute("message", "succeed");
                     }
                     else {

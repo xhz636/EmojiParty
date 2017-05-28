@@ -17,6 +17,7 @@ import java.util.List;
 public class SearchController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String keyword = request.getParameter("keywords");
         String[] list = keyword.split(",");
         List<String> keywords = new ArrayList<>();

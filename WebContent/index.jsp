@@ -15,7 +15,7 @@
         <span class="logo-title">表情包派对</span>
     </div>
     <form action="/EmojiParty/servlet/SearchController" method="get" class="search-block">
-        <input type="text" name="keywords" placeholder="请输入表情包关键字(多个关键字以英文,分割)" class="search-input"><!--
+        <input type="text" name="keywords" placeholder="请输入表情包关键字(以,分割 超过32字节的关键字无效)" class="search-input"><!--
         --><button type="submit" title="搜索" class="search-btn">
             <i class="iconfont icon-sousuo-sousuo"></i>
         </button>
@@ -33,7 +33,7 @@
                 <input id="id-upload-file" type="file" name="uploadfile" accept="image/gif, image/jpeg, image/png, image/bmp"/>
             </button><!--
             --><input id="id-filepath" type="text" placeholder="只能上传图片,大小不超过1MB" readonly="readonly" class="filepath-show"/>
-            <input name="keywords" placeholder="请输入表情包关键字(多个关键字以英文,分割)" class="upload-input">
+            <input name="keywords" placeholder="请输入表情包关键字(以,分割 超过32字节的关键字无效)" class="upload-input">
             <br/>
             <button type="submit" title="上传" class="upload-btn">
                 <i class="iconfont icon-uploading"></i>
@@ -59,7 +59,9 @@
 
 <script>
     document.getElementById("id-upload-file").onchange = function() {
-        document.getElementById("id-filepath").value = this.value;
+        var str = this.value.replace(/\\/g, "/");
+        var index = str.lastIndexOf("/");
+        document.getElementById("id-filepath").value = this.value.substr(index + 1);
     }
     document.getElementById("id-dialog-btn").onclick = function() {
         document.getElementById("id-dialog").style = "";
